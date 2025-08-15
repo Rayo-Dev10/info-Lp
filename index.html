@@ -158,7 +158,9 @@
                 scales: {
                     x: {
                         title: { display: true, text: 'Cantidad de Café (Qx)', color: palette.darkBlue, font: { weight: 'bold' } },
-                        grid: { color: 'rgba(0, 67, 105, 0.1)' }
+                        grid: { color: 'rgba(0, 67, 105, 0.1)' },
+                        type: 'linear',
+                        position: 'bottom'
                     },
                     y: {
                         title: { display: true, text: 'Cantidad de Pan (Qy)', color: palette.darkBlue, font: { weight: 'bold' } },
@@ -180,7 +182,7 @@
 
             const budgetLineCtx = document.getElementById('budgetLineChart').getContext('2d');
             new Chart(budgetLineCtx, {
-                type: 'line',
+                type: 'scatter',
                 data: {
                     datasets: [{
                         label: 'Línea de Presupuesto',
@@ -190,6 +192,7 @@
                         borderWidth: 3,
                         pointRadius: 5,
                         pointBackgroundColor: palette.redPink,
+                        showLine: true,
                         fill: {
                             target: 'origin',
                             above: palette.lightRed,
@@ -203,7 +206,7 @@
 
             const incomeChangeCtx = document.getElementById('incomeChangeChart').getContext('2d');
             new Chart(incomeChangeCtx, {
-                type: 'line',
+                type: 'scatter',
                 data: {
                     datasets: [
                         {
@@ -212,6 +215,7 @@
                             borderColor: palette.yellowOrange,
                             borderWidth: 2,
                             borderDash: [5, 5],
+                            showLine: true,
                             tension: 0,
                             pointRadius: 0
                         },
@@ -220,6 +224,7 @@
                             data: [{x: 20, y: 0}, {x: 0, y: 50}],
                             borderColor: palette.redPink,
                             borderWidth: 3,
+                            showLine: true,
                             tension: 0,
                             pointRadius: 0
                         },
@@ -229,6 +234,7 @@
                             borderColor: palette.teal,
                             borderWidth: 2,
                             borderDash: [5, 5],
+                            showLine: true,
                             tension: 0,
                             pointRadius: 0
                         }
@@ -239,7 +245,7 @@
 
             const priceChangeCtx = document.getElementById('priceChangeChart').getContext('2d');
             new Chart(priceChangeCtx, {
-                type: 'line',
+                type: 'scatter',
                 data: {
                     datasets: [
                         {
@@ -247,6 +253,7 @@
                             data: [{x: 20, y: 0}, {x: 0, y: 50}],
                             borderColor: palette.redPink,
                             borderWidth: 3,
+                            showLine: true,
                             tension: 0,
                             pointRadius: 0
                         },
@@ -256,6 +263,7 @@
                             borderColor: palette.teal,
                             borderWidth: 2,
                             borderDash: [5, 5],
+                            showLine: true,
                             tension: 0,
                             pointRadius: 0
                         }
